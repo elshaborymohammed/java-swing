@@ -1,6 +1,9 @@
 package javax.swing;
 
 import java.awt.ComponentOrientation;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.Toolkit;
 
 // @author Mohammed El-Shabory
  public class Frame extends JFrame{
@@ -13,6 +16,12 @@ import java.awt.ComponentOrientation;
         //super.applyComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
         //super.setLocationByPlatform(true);
         //super.setLocation(com.smart.utility.PositionUtility.CenterPosition(this.getSize().width, this.getSize().height));
+    }
+    
+    public static Point CenterPosition(int width , int height){
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        Point Point = new Point((dim.width - width)/2, (dim.height - height)/2);
+        return Point;
     }
     
     public void Close(){
